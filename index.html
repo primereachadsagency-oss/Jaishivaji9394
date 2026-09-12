@@ -185,6 +185,51 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
     .stat-val { font-size: 14px; font-weight: bold; color: #ffb703; }
     .stat-lbl { font-size: 9px; color: #5c708a; margin-top: 2px; }
 
+    /* HIGHLY HIGHLIGHTED CTA BUTTON */
+    .cta-container { padding: 15px 20px 10px; }
+    .cta-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
+      border: 2px solid #ffd166;
+      color: #000000;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      animation: btn-glow 1.8s infinite ease-in-out alternate;
+    }
+
+    @keyframes btn-glow {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 183, 3, 0.4), 0 0 20px rgba(255, 183, 3, 0.2);
+        transform: scale(1);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(255, 183, 3, 0.9), 0 0 35px rgba(251, 133, 0, 0.6);
+        transform: scale(1.02);
+      }
+    }
+
+    .cta-btn:hover {
+      background: linear-gradient(135deg, #ffd166 0%, #ffb703 100%);
+      color: #000000;
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 0 30px rgba(255, 183, 3, 1), 0 0 45px rgba(251, 133, 0, 0.8);
+    }
+
+    .cta-btn i {
+      font-size: 18px;
+    }
+
     /* ANIMATED CANDLESTICK CHART */
     .chart-section { padding: 15px 20px; }
     .chart-header {
@@ -260,51 +305,6 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
     .menu-text p { font-size: 9px; color: #5c708a; }
     .arrow { font-size: 10px; color: #5c708a; transition: color 0.3s ease; }
     .menu-item:hover .arrow { color: #ffb703; }
-
-    /* HIGHLY HIGHLIGHTED CTA BUTTON */
-    .cta-container { padding: 5px 20px 20px; }
-    .cta-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
-      border: 2px solid #ffd166;
-      color: #000000;
-      padding: 15px;
-      border-radius: 8px;
-      font-weight: 900;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-      animation: btn-glow 1.8s infinite ease-in-out alternate;
-    }
-
-    @keyframes btn-glow {
-      0% {
-        box-shadow: 0 0 10px rgba(255, 183, 3, 0.4), 0 0 20px rgba(255, 183, 3, 0.2);
-        transform: scale(1);
-      }
-      100% {
-        box-shadow: 0 0 20px rgba(255, 183, 3, 0.9), 0 0 35px rgba(251, 133, 0, 0.6);
-        transform: scale(1.02);
-      }
-    }
-
-    .cta-btn:hover {
-      background: linear-gradient(135deg, #ffd166 0%, #ffb703 100%);
-      color: #000000;
-      transform: scale(1.05) translateY(-2px);
-      box-shadow: 0 0 30px rgba(255, 183, 3, 1), 0 0 45px rgba(251, 133, 0, 0.8);
-    }
-
-    .cta-btn i {
-      font-size: 18px;
-    }
 
     /* FOOTER LINKS FOR POPUPS */
     .footer-links {
@@ -509,6 +509,13 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
       </div>
     </div>
 
+    <!-- HIGHLY HIGHLIGHTED CTA BUTTON WITH PIXEL SUBSCRIBER EVENT (MOVED UP) -->
+    <div class="cta-container">
+      <a href="https://t.me/+2GSFtyd-RnM5M2U1" target="_blank" class="cta-btn" onclick="trackTelegramClick();">
+        <i class="fa-brands fa-telegram"></i> JOIN PREMIUM CHANNEL
+      </a>
+    </div>
+
     <div class="chart-section">
       <div class="chart-header">
         <span>// SIGNAL HISTORY</span>
@@ -527,7 +534,7 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
     </div>
 
     <div class="menu-list">
-      <div class="menu-item">
+      <div class="menu-item" onclick="trackTelegramClick('Expert Analysis');">
         <div class="menu-left">
           <i class="fa-solid fa-chart-line menu-icon"></i>
           <div class="menu-text">
@@ -538,7 +545,7 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
         <span class="arrow">▶</span>
       </div>
 
-      <div class="menu-item">
+      <div class="menu-item" onclick="trackTelegramClick('Real-time Signals');">
         <div class="menu-left">
           <i class="fa-solid fa-bolt menu-icon"></i>
           <div class="menu-text">
@@ -549,7 +556,7 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
         <span class="arrow">▶</span>
       </div>
 
-      <div class="menu-item">
+      <div class="menu-item" onclick="trackTelegramClick('Education Circle');">
         <div class="menu-left">
           <i class="fa-solid fa-bullseye menu-icon"></i>
           <div class="menu-text">
@@ -559,13 +566,6 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
         </div>
         <span class="arrow">▶</span>
       </div>
-    </div>
-
-    <!-- HIGHLY HIGHLIGHTED CTA BUTTON WITH PIXEL SUBSCRIBER EVENT -->
-    <div class="cta-container">
-      <a href="https://t.me/+2GSFtyd-RnM5M2U1" target="_blank" class="cta-btn" onclick="fbq('track', 'Subscribe');">
-        <i class="fa-brands fa-telegram"></i> JOIN STRATEGY CHANNEL
-      </a>
     </div>
 
     <!-- Footer Popups Links -->
@@ -596,6 +596,23 @@ src="https://www.facebook.com/tr?id=1660015362112929&ev=PageView&noscript=1"
   </div>
 
   <script>
+    // Meta Pixel Event Tracking Function for Telegram Join & Clicks
+    function trackTelegramClick(source = 'CTA Button') {
+      if (typeof fbq !== 'undefined') {
+        // Standard Subscribe Event for Meta Pixel
+        fbq('track', 'Subscribe', {
+          value: 0.00,
+          currency: 'INR',
+          predicted_ltv: 0.00
+        });
+        
+        // Custom Event for Real-time Click Tracking
+        fbq('trackCustom', 'TelegramJoinClick', {
+          button_location: source
+        });
+      }
+    }
+
     const modalData = {
       about: {
         title: "// ABOUT US",
